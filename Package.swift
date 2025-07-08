@@ -98,7 +98,7 @@ if let pod_archive_path = ProcessInfo.processInfo.environment["ORT_POD_LOCAL_PAT
     // ORT release - Fixed version with MinimumOSVersion in Info.plist
     package.targets.append(
        Target.binaryTarget(name: "onnxruntime",
-                           url: "https://github.com/ntna141/onnxruntime-swift-package-manager/releases/download/v1.22.0-fixed/pod-archive-onnxruntime-c-1.22.0-fixed.zip",
+                           url: "https://github.com/ntna141/onnxruntime-swift-package-manager/releases/download/v1.22.0/pod-archive-onnxruntime-c-1.22.0-fixed.zip",
                            // SHA256 checksum
                            checksum: "a0b6d3eae53639eb9068780d81fddf9b8d98ccf976ec2be72980b607f3136b07")
     )
@@ -110,7 +110,7 @@ if let ext_pod_archive_path = ProcessInfo.processInfo.environment["ORT_EXTENSION
     // ORT Extensions release - Fixed version with MinimumOSVersion in Info.plist
     package.targets.append(
         Target.binaryTarget(name: "onnxruntime_extensions",
-                            url: "https://github.com/ntna141/onnxruntime-swift-package-manager/releases/download/v1.22.0-fixed/pod-archive-onnxruntime-extensions-c-0.13.0-fixed.zip",
+                            url: "https://github.com/ntna141/onnxruntime-swift-package-manager/releases/download/v1.22.0/pod-archive-onnxruntime-extensions-c-0.13.0-fixed.zip",
                             // SHA256 checksum
                             checksum: "402e72e53f73334df386e133be661d1823a8af4a78013d29d4314f4dd37e2a5e")
     )
