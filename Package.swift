@@ -21,7 +21,7 @@ import class Foundation.ProcessInfo
 
 let package = Package(
     name: "onnxruntime",
-    platforms: [.iOS(.v13),
+    platforms: [.iOS(.v15),
                 .macOS(.v11)],
     products: [
         .library(name: "onnxruntime",
@@ -95,23 +95,23 @@ if let pod_archive_path = ProcessInfo.processInfo.environment["ORT_POD_LOCAL_PAT
     package.targets.append(Target.binaryTarget(name: "onnxruntime", path: pod_archive_path))
 
 } else {
-    // ORT release - Fixed version with MinimumOSVersion in Info.plist
+    // ORT release - Corrected version with proper MinimumOSVersion matching binary deployment target
     package.targets.append(
        Target.binaryTarget(name: "onnxruntime",
-                           url: "https://github.com/ntna141/onnxruntime-swift-package-manager/releases/download/v1.22.0/pod-archive-onnxruntime-c-1.22.0-fixed.zip",
+                           url: "https://github.com/ntna141/onnxruntime-swift-package-manager/releases/download/v1.22.0/pod-archive-onnxruntime-c-1.22.0-corrected.zip",
                            // SHA256 checksum
-                           checksum: "a0b6d3eae53639eb9068780d81fddf9b8d98ccf976ec2be72980b607f3136b07")
+                           checksum: "8afca8f6623ac97194233ef0c1c25e3599b14361948c813b752ca9cdf94cf60d")
     )
 }
 
 if let ext_pod_archive_path = ProcessInfo.processInfo.environment["ORT_EXTENSIONS_POD_LOCAL_PATH"] {
     package.targets.append(Target.binaryTarget(name: "onnxruntime_extensions", path: ext_pod_archive_path))
 } else {
-    // ORT Extensions release - Fixed version with MinimumOSVersion in Info.plist
+    // ORT Extensions release - Corrected version with proper MinimumOSVersion matching binary deployment target  
     package.targets.append(
         Target.binaryTarget(name: "onnxruntime_extensions",
-                            url: "https://github.com/ntna141/onnxruntime-swift-package-manager/releases/download/v1.22.0/pod-archive-onnxruntime-extensions-c-0.13.0-fixed.zip",
+                            url: "https://github.com/ntna141/onnxruntime-swift-package-manager/releases/download/v1.22.0/pod-archive-onnxruntime-extensions-c-0.13.0-corrected.zip",
                             // SHA256 checksum
-                            checksum: "402e72e53f73334df386e133be661d1823a8af4a78013d29d4314f4dd37e2a5e")
+                            checksum: "94a7aca1694b84acb12be189263a73bfa78f254e7c380e372167d294c9974507")
     )
 }
